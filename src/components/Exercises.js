@@ -9,7 +9,7 @@ import Loader from './Loader';
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
-console.log('we',exercises)
+
   useEffect(() => {
     const fetchExercisesData = async () => {
     //   let exercisesData = []
@@ -25,9 +25,8 @@ console.log('we',exercises)
     };
 
     fetchExercisesData();
-  }, [bodyPart]);
+  }, [bodyPart,setExercises]);
 
-  console.log('test',exercises)
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
